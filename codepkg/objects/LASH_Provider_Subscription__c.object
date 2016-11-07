@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Portal Object : Relationships of a provider to a subscription.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>LASH_Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Relationship between Provider Subscription and Contact [ Contact --&gt; External users]</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>For Portal user needs record type</errorMessage>
+            <filterItems>
+                <field>Contact.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>LASH_Portal_User</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Provider_Subscriptions</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Disaffiliation_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Disaffiliation Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LASH_First_Login_Failed_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>First Login Failed Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Is_First_Login__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>When a new record is created for a user this checkbox is checked, after user logs in for the first time this check box is unchecked</description>
+        <externalId>false</externalId>
+        <label>Is First Login</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Is_User_Active__c</fullName>
+        <externalId>false</externalId>
+        <formula>LASH_Portal_User__r.IsActive</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is User Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Last_Password_Change_Date__c</fullName>
+        <description>For storing the last Password change/ Reset date</description>
+        <externalId>false</externalId>
+        <label>Last Password Change Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LASH_NPIProviderSubscriptions__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>it will store the combination of NPI and Subscription . this field is populate by Apex code at the time of insert</description>
+        <externalId>false</externalId>
+        <label>NPIProviderSubscriptions</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_No_of_Invalid_Attempts__c</fullName>
+        <externalId>false</externalId>
+        <label>No of Invalid Attempts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Password_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(((Now()- LASH_Last_Password_Change_Date__c ) &gt;  LASH_Subscription__r.LASH_Subscription_expiry_Date__c), &quot;Expired&quot;, &quot;Active&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Password Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Answer_2__c</fullName>
+        <description>Stores the answer</description>
+        <externalId>false</externalId>
+        <label>Portal User Answer 2</label>
+        <length>175</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Answer_3__c</fullName>
+        <description>Stores the Answer</description>
+        <externalId>false</externalId>
+        <label>Portal User Answer 3</label>
+        <length>175</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Portal User Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Question_1__c</fullName>
+        <description>Sotres the question</description>
+        <externalId>false</externalId>
+        <label>Portal User Question 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Question_2__c</fullName>
+        <description>Stores the question</description>
+        <externalId>false</externalId>
+        <label>Portal User Question 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Question_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Portal User Question 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Setup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Portal User Setup</label>
+        <referenceTo>LASH_Portal_User_Setup__c</referenceTo>
+        <relationshipLabel>Provider Subscriptions</relationshipLabel>
+        <relationshipName>Provider_Subscriptions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Portal User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Provider_Subscriptions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Provide_EmailId__c</fullName>
+        <description>For displaying Email ID</description>
+        <externalId>false</externalId>
+        <formula>LASH_Provider__r.Email__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Provide Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Provider_NPINo__c</fullName>
+        <description>For displaying the NPI Number</description>
+        <externalId>false</externalId>
+        <formula>LASH_Provider__r.APS_NPI__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Provider NPI</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Provider__c</fullName>
+        <description>MD Relationship between Provider and Subscription.</description>
+        <externalId>false</externalId>
+        <label>Provider</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Provider Subscriptions</relationshipLabel>
+        <relationshipName>Provider_Subscriptions</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>LASH_Subscription__c</fullName>
+        <description>Relationship between Provider Subscription Object and Subscription Object</description>
+        <externalId>false</externalId>
+        <label>Subscription</label>
+        <referenceTo>LASH_Subscription__c</referenceTo>
+        <relationshipName>Provider_Subscriptions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>LASH_Temporary_Password_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK( LASH_Last_Password_Change_Date__c )),null,IF(((Now()- CreatedDate) &gt;= LASH_Subscription__r.LASH_Temporary_Password_Expiration__c), &quot;Expired&quot;, &quot;Active&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Temporary Password Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lash_userName__c</fullName>
+        <description>For displaying the user name</description>
+        <externalId>false</externalId>
+        <formula>$User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>UserName</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Portal_User_Answer_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Portal User Answer 1</label>
+        <length>175</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <label>Provider Subscription</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Provider Subscription Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Provider Subscriptions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

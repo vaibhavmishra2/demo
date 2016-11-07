@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>TJ July 14 : Portal Object : This will store the custom user details</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>LASH_Custom_UserName__c</fullName>
+        <description>This is store the custom user Name</description>
+        <externalId>false</externalId>
+        <label>Custom UserName</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LASH_First_Login_Failed_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>First Login Failed Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LASH_LastPasswordChangeDate__c</fullName>
+        <description>For storing the last Password change/ Reset date</description>
+        <externalId>false</externalId>
+        <label>LastPasswordChangeDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LASH_No_of_Invalid_Attempts__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>No of Invalid Attempts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Password_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(((Now()-LASH_LastPasswordChangeDate__c) &gt;  LASH_Subscription_Password_Policy__c), &quot;Expired&quot;, &quot;Active&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Password Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Answer_1__c</fullName>
+        <description>Store the Answer</description>
+        <externalId>false</externalId>
+        <label>Portal User Answer 1</label>
+        <length>175</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Answer_2__c</fullName>
+        <description>Store the Answer</description>
+        <externalId>false</externalId>
+        <label>Portal User Answer 2</label>
+        <length>175</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Answer_3__c</fullName>
+        <description>Store the Answer</description>
+        <externalId>false</externalId>
+        <label>Portal User Answer 3</label>
+        <length>175</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Question_1__c</fullName>
+        <description>Store the Question</description>
+        <externalId>false</externalId>
+        <label>Portal User Question 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Question_2__c</fullName>
+        <description>Store the Question</description>
+        <externalId>false</externalId>
+        <label>Portal User Question 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Portal_User_Question_3__c</fullName>
+        <description>Store the Question</description>
+        <externalId>false</externalId>
+        <label>Portal User Question 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LASH_SFDC_Username__c</fullName>
+        <externalId>false</externalId>
+        <formula>LASH_User__r.Username</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SFDC Username</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Subscription_Password_Policy__c</fullName>
+        <externalId>false</externalId>
+        <formula>LASH_Subscription__r.LASH_Subscription_expiry_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Subscription Password Policy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Subscription__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>It will have the Subscription details</description>
+        <externalId>false</externalId>
+        <label>Subscription</label>
+        <referenceTo>LASH_Subscription__c</referenceTo>
+        <relationshipLabel>Portal User Setup</relationshipLabel>
+        <relationshipName>Portal_User_Setup</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Temporary_Password_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(LASH_LastPasswordChangeDate__c)),null,IF(((Now()- CreatedDate) &gt;= LASH_Subscription__r.LASH_Temporary_Password_Expiration__c), &quot;Expired&quot;, &quot;Active&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Temporary Password Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_UserID__c</fullName>
+        <externalId>false</externalId>
+        <formula>LASH_User__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>UserID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_User_Email_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>LASH_User__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User Email ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>it will store the Saleforce username . it is mandatory field</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Postal_User_Setting</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LASH_User_isActive__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.IsActive</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User isActive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LASH_isFirstLogin__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>When a new record is created for a user this checkbox is checked, after user logs in for the first time this check box is unchecked</description>
+        <externalId>false</externalId>
+        <label>isFirstLogin</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Portal User Setup</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>LASH_User__c</columns>
+        <columns>LASH_Custom_UserName__c</columns>
+        <columns>LASH_First_Login_Failed_Time__c</columns>
+        <columns>LASH_isFirstLogin__c</columns>
+        <columns>LASH_LastPasswordChangeDate__c</columns>
+        <columns>LASH_No_of_Invalid_Attempts__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Portal User Setup Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Portal User Setup</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

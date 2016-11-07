@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Portal Object : Object for managing a provider&apos;s access to portal following a registration.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>LASH_Applicable_Special_Character__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicable Special Character</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Client__c</fullName>
+        <description>Manufacturer relationship with Subnscriptions</description>
+        <externalId>false</externalId>
+        <label>Client</label>
+        <referenceTo>Lash_Client__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>LASH_IsLowerCase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsLowerCase</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LASH_IsNumber__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsNumber</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LASH_IsSpecialCharacter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsSpecialCharacter</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LASH_IsUppercase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsUppercase</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LASH_Min_Length_of_Password__c</fullName>
+        <externalId>false</externalId>
+        <label>Min. Length of Password</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Security_Questions__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Questions</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In what city were you born?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>What is your mother&apos;s maiden name?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>What is your pet&apos;s name?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>What was your childhood nickname?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In what city did you meet your spouse/significant other?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>What is the name of your favourite childhood friend?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In what city was your first job?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LASH_Subscription_expiry_Date__c</fullName>
+        <description>Password Expiry Date Counter : we need to set the date as per the Subscription Password Policy .</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Password Expiry Date Counter : we need to set the date as per the Subscription Password Policy .</inlineHelpText>
+        <label>Subscription expiry  Date</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LASH_Temporary_Password_Expiration__c</fullName>
+        <externalId>false</externalId>
+        <label>Temporary Password Expiration Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lash_Maxx_Inaffiliation_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Inaffiliation Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Subscription</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Subscription Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Subscriptions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Accept_only_Alphanumeric</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX( Name , &quot;[a-zA-Z0-9]+&quot;))</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>Special Characters and spaces not allowed</errorMessage>
+    </validationRules>
+</CustomObject>
